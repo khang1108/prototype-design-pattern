@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Structures}{15}{0}{2}
+\beamer@sectionintoc {3}{Real-life examples}{36}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{42}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{43}{0}{5}

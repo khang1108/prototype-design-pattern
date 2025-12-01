@@ -1,0 +1,49 @@
+\section{Real-life examples}
+
+\begin{frame}{When should we use?}
+    \begin{block}{When should we use?}
+        \begin{itemize}
+            \item \textbf{Heavy Initialization:} Lower Initialization costs, as cloning faster than than building a new object from scratch
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{When should we use?}
+    \begin{block}{When should we use?}
+        \begin{itemize}
+            \item \textbf{Heavy Initialization:} Lower Initialization costs, as cloning faster than than building a new object from scratch
+            \item \textbf{Subclass Explosion:} Helpful for managing various objects with minor differences. Instead of creating multiple classes, you can clone and modify prototypes.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{When should we use?}
+    \begin{block}{When should we use?}
+        \begin{itemize}
+            \item \textbf{Heavy Initialization:} Lower Initialization costs, as cloning faster than than building a new object from scratch
+            \item \textbf{Subclass Explosion:} Helpful for managing various objects with minor differences. Instead of creating multiple classes, you can clone and modify prototypes.
+            \item \textbf{Dynamic Configurations:} If you need to create objects at runtime, you can \code{clone} a base configuration and adjust it as necessary. \cite{faraz_prototype_proscons}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{When should we not use?}
+    \begin{block}{When should we not use?}
+        \textbf{Deep Copy Challenges:} If objects contain \textbf{complex nested} structures or references to other objects, implementation a \code{deep copy} mechanism for cloning can be challenging.
+    \end{block}
+\end{frame}
+
+\begin{frame}{When should we not use?}
+    \begin{block}{When should we not use?}
+        \textbf{Deep Copy Challenges:} If objects contain \textbf{complex nested} structures or references to other objects, implementation a \code{deep copy} mechanism for cloning can be challenging.
+        \textbf{Increased Memory Usage:} If objects are \textbf{large} or contain a \textbf{significant} amount of data, cloning objects can lead to increased memory usage.
+    \end{block}
+\end{frame}
+
+\begin{frame}{When should we not use?}
+    \begin{block}{When should we not use?}
+        \textbf{Deep Copy Challenges:} If objects contain \textbf{complex nested} structures or references to other objects, implementation a \code{deep copy} mechanism for cloning can be challenging.
+        \textbf{Increased Memory Usage:} If objects are \textbf{large} or contain a \textbf{significant} amount of data, cloning objects can lead to increased memory usage.
+        \textbf{Potential for Cloning Abuse:} \textbf{Misuse} or \textbf{Excessive} cloning of objects can lead to code complexity and maintenance issuses.
+    \end{block}
+\end{frame}

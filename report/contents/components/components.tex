@@ -1,0 +1,296 @@
+\section{Structures}
+
+\begin{frame}{Basic Prototype Implementation}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\linewidth]{img/specific/basic_implementation.jpg}
+        \caption{Structure for basic implementation}
+        \label{fig:basic_implementation}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Basic Prototype Implementation}
+    \begin{block}{Components}
+        \begin{itemize}
+            \item \textbf{Prototype Interface}: You need to define how the objet will be \textbf{clone} by using \code{clone()}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Basic Prototype Implementation}
+    \begin{block}{Components}
+        \begin{itemize}
+            \item \textbf{Prototype Interface}: You need to define how the objet will be \textbf{clone} by using \code{clone()}
+
+            \item \textbf{Concrete Prototype:} Implements the cloning method and stores the object data.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Basic Prototype Implementation}
+    \begin{block}{Components}
+        \begin{itemize}
+            \item \textbf{Prototype Interface}: You need to define how the objet will be \textbf{clone} by using \code{clone()}
+            \item \textbf{Concrete Prototype:} Implements the cloning method and stores the object data.
+            \item \textbf{Client:} Uses the \code{clone()} method to create new objects
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Bacteria Class}
+    \begin{lstlisting}
+class Bacteria{
+private:
+    std::string dna_;
+    std::vector<std::string> resistanceList_;
+    std::vector<std::string> mutationHistory_;
+    int generation_;
+public:
+    /// @brief : Destructor
+    ~Bacteria(){
+        std::cout << "\n[INFO] Deleting the" << RED << "'bacteria'" << RESET << " object\n";
+    }
+};
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Bacteria Class}
+    \begin{lstlisting}
+    ///< @brief : Mutating 
+    void mutate(const std::string& resistanceSubstance) {
+        this->dna_ += "_Mutated";
+        this->resistanceList_.push_back("Resist-" + resistanceSubstance);
+        this->mutationHistory_.push_back("Mutate-" + resistanceSubstance);
+    }
+
+    void printInfo() {
+        std::cout << "--- Bacteria Info ---" << "\n";
+        std::cout << "Gen: " << dna_ << "\n";
+        std::cout << "Generation: " << generation_ << "\n";
+        std::cout << "Resistance: ";
+        for (const auto& r : resistanceList_) std::cout << r << " ";
+        std::cout << "\n" << "\n";
+    }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Bacteria Class}
+    \begin{lstlisting}
+    /// @brief : Default constructor
+    Bacteria() : dna_(""), resistanceList_({}), mutationHistory_({}), generation_(0){
+        std::cout << "\n[INFO] Initialize a " << RED << "'bacteria'" << RESET << " object via " << 
+                YELLOW << "'default constructor'" << RESET << '\n';
+    } 
+    /// @brief : Copy constructor using Deep Copy
+    Bacteria(const Bacteria& other){
+        dna_ = other.dna_;
+        resistanceList_ = other.resistanceList_;
+        mutationHistory_ = other.mutationHistory_;
+        generation_ = other.generation_;
+
+        std::cout << "\n[INFO] Initialize a " << RED << "'bacteria'" << RESET << " object via " << 
+                YELLOW << "'copy constructor'" << RESET << '\n';
+    }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Bacteria Class}
+    \begin{lstlisting}
+    /// @brief : Clone method
+    Bacteria* clone() {
+        std::cout << "Cloning " << RED << "'bacteria'" << RESET << " object via " 
+                << YELLOW << "'clone()'" << RESET << "method\n"; 
+
+        Bacteria* newBacteria = new Bacteria(*this);
+
+        newBacteria->generation_ = this->generation_ + 1;
+
+        return newBacteria;
+    }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Bacteria Class}
+    \begin{lstlisting}
+    int main()
+    {
+        std::ios_base::sync_with_stdio(false);
+        Bacteria* mother = new Bacteria();
+
+        mother->mutate("Tetracycline");    
+        mother->mutate("Streptomycin");    
+    
+        std::cout << "Mother after mutated:" << std::endl;
+        mother->printInfo();
+    
+        std::cout << "Child cloned from Mother:" << std::endl;
+        Bacteria* child = mother->clone();
+        child->mutate("Chloramphenicol");
+    
+        child->printInfo();
+        return 0;
+    }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Basic Implementation}
+    \begin{TerminalBox}
+    % --- DÒNG 1: KHỞI TẠO MẸ ---
+    [INFO] Initialize a \cred{'bacteria'} object via \cyellow{'default constructor'} \\
+    Mother after mutated: \\
+    --- Bacteria Info --- \\
+    Gen: \_Mutated\_Mutated\_Mutated\_Mutated \\
+    Generation: 0 \\
+    Resistance: Resist-Penicillin Resist-Ampicillin Resist-Tetracycline Resist-Streptomycin \\[1em]
+    
+    % --- DÒNG 2: CLONE ---
+    Child cloned from Mother: \\
+    Cloning \cred{'bacteria'} object via \cyellow{'clone()'} method \\[1em]
+    
+    % --- DÒNG 3: KẾT QUẢ CON ---
+    [INFO] Initialize a \cred{'bacteria'} object via \cyellow{'copy constructor'} \\
+    --- Bacteria Info --- \\
+    Gen: \_Mutated\_Mutated\_Mutated\_Mutated\_Mutated \\
+    Generation: 1 \\
+    Resistance: Resist-Penicillin Resist-Ampicillin Resist-Tetracycline Resist-Streptomycin Resist-Chloramphenicol
+    \end{TerminalBox}
+\end{frame}
+
+\begin{frame}{Basic Implementation}
+    \begin{block}{Conclusion}
+        \begin{itemize}
+            \item Create objects \textbf{without} knowing their specific class.
+            \item  Avoiding complicated initialization.
+            \item  Client \textbf{DO NOT} need to know how to copy an object. All of these pieces are encapsulated inside the \code{clone()} method.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Registry Implementation}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\linewidth]{img/specific/registry_implementation.jpg}
+        \caption{Structure for Registry Implementation}
+        \label{fig:registry}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Registry Implementation}
+    \begin{block}{Definition}
+        The \textbf{Registry Design Pattern} works \textit{hand-in-hand} with the \textbf{Prototype Pattern} by acting as a \textbf{centralized store for prototypes}.
+
+        It allows you to \code{register} prototypes with unique keys and retrieve clones when needed, providing \textbf{flexibility} and avoiding tight \textbf{coupling} with specific classes \cite{ramjas_prototype}.
+    \end{block}
+\end{frame}
+    
+\begin{frame}[fragile]{Implementation of Server Class}
+    \begin{lstlisting}
+    class ServerPrototype
+    {
+    public:
+        ///< @brief: Pure virtual allowing each subclass to define its own method
+        virtual ServerPrototype* clone() const = 0;
+        virtual void showConfig() = 0;
+        virtual ~ServerPrototype() {}
+    };
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Server Class}
+    \begin{lstlisting}
+    class LinuxServer : public ServerPrototype {
+    private:
+        std::string name_;
+        std::string osVersion_;
+        int ramGB_;
+    public:
+        LinuxServer(std::string name, int ram) : name_(name), ramGB_(ram) {
+            this->osVersion_ = "Linux 6.17.4-arch2-1";
+            std::cout << "[System] Installing OS for Prototype " << name_ 
+                << "via " << RED << "'default  constructor'" << RESET << '\n';
+        }
+        LinuxServer(const LinuxServer& other){
+            name_ = other.name_; 
+            osVersion_ = other.osVersion_; 
+            ramGB_  =  other.ramGB_;
+            std::cout << "[System] Installing OS for Prototype " << name_ 
+                    << "via " << RED << "'copy  constructor'" << RESET << '\n';
+        }
+    };
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Server Class}
+    \begin{lstlisting}
+    ServerPrototype* clone() const override {
+        return new LinuxServer(*this);
+    }
+
+    void showConfig() override {
+        std::cout << "Server: " << name_ << " | OS: " << osVersion_ << " | RAM: " << ramGB_ << "GB" << std::endl;
+    }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation of Server Class}
+    \begin{lstlisting}
+    class ServerRegistry
+    {
+    private:
+        std::map<std::string,  ServerPrototype*> templates;
+    public:
+        ServerRegistry() {
+            std::cout <<  "=== STARTING REIGSTRY ===" << std::endl;
+    
+            templates["Standard"] = new LinuxServer("Standard_VPS", 4);
+            templates["HighMem"] = new LinuxServer("HighMem_VPS", 64);
+    
+            std::cout << "=== COMPLETED INITIALIZATION ===" << std::endl;
+        }
+        ~ServerRegistry() {
+            for (auto const& [key, val]: templates) {
+                delete val;
+            }
+            templates.clear();
+        }
+    };
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Registry Prototype}
+    \begin{block}{Advantages}
+        \begin{itemize}
+            \item \textbf{Reusability:} Prototypes are \code{stored} and \code{reused},  saving computational costs.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Registry Prototype}
+    \begin{block}{Advantages}
+        \begin{itemize}
+            \item \textbf{Reusability:} Prototypes are \code{stored} and \code{reused},  saving computational costs.
+            \item \textbf{Flexibility:} New prototypes can be \code{added} to the registry without altering existing code.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Registry Prototype}
+    \begin{block}{Advantages}
+        \begin{itemize}
+            \item \textbf{Reusability:} Prototypes are \code{stored} and \code{reused},  saving computational costs.
+            \item \textbf{Flexibility:} New prototypes can be \code{added} to the registry without altering existing code.
+            \item \textbf{Decouping:} Clients don't need to know the specific classes of object they work with.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Registry Prototype}
+    \begin{block}{Advantages}
+        \begin{itemize}
+            \item \textbf{Reusability:} Prototypes are \code{stored} and \code{reused},  saving computational costs.
+            \item \textbf{Flexibility:} New prototypes can be \code{added} to the registry without altering existing code.
+            \item \textbf{Decouping:} Clients don't need to know the specific classes of object they work with.
+            \item \textbf{Centralized Management:} All prototypes are stored in one place, making them easy to manage.
+        \end{itemize}
+    \end{block}
+\end{frame}

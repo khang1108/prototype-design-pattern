@@ -1,0 +1,115 @@
+% Introduction
+\section{Introduction}
+\begin{frame}[t]
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+    \note{
+    \begin{itemize}
+        \item The first section is Introduction.
+    \end{itemize}
+    }
+\end{frame}
+
+\begin{frame}{What is Prototype Pattern}
+    \begin{block}{Definition}
+        \textbf{Prototype Pattern} is a \textbf{creational} design pattern that enables object duplication through \textbf{cloning} rather than \textbf{instantiation} \cite{chan2025prototype}
+    \end{block}
+\end{frame}
+
+\begin{frame}{What is Prototype Pattern}
+    \begin{block}{Definition}
+        \textbf{Prototype Pattern} is a \textbf{creational} design pattern that enables object duplication through \textbf{cloning} rather than \textbf{instantiation}
+    \end{block}
+
+    \begin{block}{Why should we use it?}
+        This approach is particularly \textbf{useful} when object creation is \textbf{costly}, objects have \textbf{numerous} configurations, or you want to \textbf{decouple} object creation from its representation.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Problem}
+    \begin{block}{Description}
+        You instantly need to create \textbf{1.000} objects \code{Solid} that has complicated \textit{attributes, classes, and methods} such as \textbf{(Texture, 3D Model, Audio, Database, .etc)}
+    \end{block} 
+\end{frame}
+
+\begin{frame}{Problem}
+    \begin{block}{Description}
+        You instantly need to create \textbf{1.000} objects \code{Solid} that has complicated \textit{attributes, classes, and methods} such as \textbf{(Texture, 3D Model, Audio, Database, .etc)}
+    \end{block} 
+
+    \begin{block}{Naive Solution}
+        Use a \code{for} loop \code{1000 times} to execute the command \code{new Soldier()}.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Problem}
+    \begin{block}{Description}
+        You instantly need to create \textbf{1.000} objects \code{Solid} that has complicated \textit{attributes, classes, and methods} such as \textbf{(Texture, 3D Model, Audio, Database, .etc)}
+    \end{block} 
+
+    \begin{block}{Naive Solution}
+        Use a \code{for} loop \code{1000 times} to execute the command \code{new Soldier()}.
+    \end{block}
+
+    \begin{block}{Problem}
+        But for each time you initialize an object, which \textbf{MUST} load all of the data from disk (I/O), analyze configurations, and connect to the Database to get some attributes.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Problem}
+    \begin{block}{Description}
+        You instantly need to create \textbf{1.000} objects \code{Solid} that has complicated \textit{attributes, classes, and methods} such as \textbf{(Texture, 3D Model, Audio, Database, .etc)}
+    \end{block} 
+
+    \begin{block}{Naive Solution}
+        Use a \code{for} loop \code{1000 times} to execute the command \code{new Soldier()}.
+    \end{block}
+
+    \begin{block}{The Consequence}
+        \begin{itemize}
+            \item Spend a lot of \code{CPU/RAM} resources, \textbf{lag}, or \textbf{"not responding"} error.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Optimized Approach}
+    \begin{block}{Prototype}
+       Create a single \textbf{prototype} object with all heavy assets \textbf{already loaded}. Then, simply \code{clone} it when needed. \cite{gfg_prototype}\\
+       This approach saves costly resources and time, especially when object creation is a \textbf{heavy} process.\\
+    \end{block}
+\end{frame}
+
+\begin{frame}{Optimized Approach}
+    \begin{block}{Prototype}
+       Create a single \textbf{prototype} object with all heavy assets \textbf{already loaded}. Then, simply \code{clone} it when needed. \cite{gfg_prototype}\\
+       This approach saves costly resources and time, especially when object creation is a \textbf{heavy} process.\\
+    \end{block}
+    \begin{softbox}
+        Suppose a user creates a document with a specific layout, fonts, and styling, 
+        and wishes to create similar documents with slight modifications.
+    \end{softbox}
+\end{frame}
+
+\begin{frame}{Optimized Approach}
+    \begin{softbox}
+        \textbf{Document and Content Management Systems }can use the prototype pattern to manage \code{document templates}. Users can \code{clone} an existing template and then make \textit{specific modifications}.
+    \end{softbox}
+\end{frame}
+
+\begin{frame}{Optimized Approach}
+    \begin{softbox}
+        \textbf{Document and Content Management Systems }can use the prototype pattern to manage \code{document templates}. Users can \code{clone} an existing template and then make \textit{specific modifications}.
+    \end{softbox}
+    \begin{softbox}
+        \textbf{Game engines} can use them to frequently \code{clone} complex characters or terrain objects. The Prototype approach allows \textit{efficient duplication} without repeating costly initialization.
+    \end{softbox}
+\end{frame}
+
+\begin{frame}{Analogy Example}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\linewidth]{img/specific/analogy_example.jpg}
+        \caption{Analogy Example for Prototype Pattern}
+        \label{fig:analogy_example}
+    \end{figure}
+\end{frame}
