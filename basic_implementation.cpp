@@ -77,10 +77,13 @@ int main()
 
     std::cout << "Child cloned from Mother:" << std::endl;
     Bacteria* child = mother->clone();
+    child->printInfo();
 
     child->mutate("Chloramphenicol");
+    std::cout << '\n';
 
     child->printInfo();
+    mother->printInfo();
 
     delete child;
     delete mother;

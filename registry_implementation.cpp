@@ -39,9 +39,7 @@ public:
         name_ = other.name_;
         osVersion_ = other.osVersion_;
         ramGB_  =  other.ramGB_;
-
         installedPackages_ =  new std::vector<std::string>(*other.installedPackages_);
-
         std::cout << "[System] Installing OS for Prototype " << name_ 
                 << "via " << RED << "'copy  constructor'" << RESET << '\n';
     }
@@ -66,7 +64,7 @@ private:
 
 public:
     ServerRegistry() {
-        std::cout <<  "=== STARTING REIGSTRY ===" << std::endl;
+        std::cout <<  "=== STARTING REGISTRY ===" << std::endl;
 
         templates["Standard"] = new LinuxServer("Standard_VPS", 4);
         templates["HighMem"] = new LinuxServer("HighMem_VPS", 64);
