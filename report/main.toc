@@ -1,5 +1,15 @@
-\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{Structures}{15}{0}{2}
-\beamer@sectionintoc {3}{Real-life examples}{36}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{42}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{43}{0}{5}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}GitHub Repository Link}{1}{section.2}%
+\contentsline {section}{\numberline {3}GitHub Commit List}{1}{section.3}%
+\contentsline {section}{\numberline {4}GitHub Contribution}{2}{section.4}%
+\contentsline {section}{\numberline {5}Class Diagram}{3}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Basic Prototype Implementation}{5}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Định nghĩa}{5}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Code Demo}{8}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Output}{11}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}Registry Prototype Implementation}{11}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Registry Pattern}{13}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Demo Code}{13}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Output}{17}{subsubsection.5.2.3}%
+\contentsline {section}{\numberline {6}Feature Checklist}{17}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}%

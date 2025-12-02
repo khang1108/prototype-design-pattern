@@ -1,0 +1,23 @@
+\frametitle{Implementation of Server Class}
+\begin{lstlisting}
+    int main() {
+        std::ios_base::sync_with_stdio(false);
+
+        ServerRegistry registry;
+
+        std::cout << "[INFO] Create a " << RED << "'Standard'" << RESET
+                << " server\n";
+        ServerPrototype* standardServer = registry.createServer("Standard");
+        if(standardServer) standardServer->showConfig();
+
+        std::cout << "[INFO] Create a " << RED << "'HigMem'" << RESET
+                << " server\n";
+        ServerPrototype* highMem = registry.createServer("HighMem");
+        if(highMem) highMem->showConfig();
+
+        std::cout << "[INFO] Create a " << RED << "'Standard'" << RESET
+                << " server\n";
+        ServerPrototype* standardServer2 = registry.createServer("Standard");
+        if(standardServer2) standardServer2->showConfig();
+    }
+    \end{lstlisting}

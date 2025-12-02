@@ -234,27 +234,48 @@ public:
 
 \begin{frame}[fragile]{Implementation of Server Class}
     \begin{lstlisting}
-    class ServerRegistry
-    {
-    private:
-        std::map<std::string,  ServerPrototype*> templates;
-    public:
-        ServerRegistry() {
-            std::cout <<  "=== STARTING REIGSTRY ===" << std::endl;
-    
-            templates["Standard"] = new LinuxServer("Standard_VPS", 4);
-            templates["HighMem"] = new LinuxServer("HighMem_VPS", 64);
-    
-            std::cout << "=== COMPLETED INITIALIZATION ===" << std::endl;
-        }
-        ~ServerRegistry() {
-            for (auto const& [key, val]: templates) {
-                delete val;
-            }
-            templates.clear();
-        }
-    };
+    int main() {
+        std::ios_base::sync_with_stdio(false);
+
+        ServerRegistry registry;
+
+        std::cout << "[INFO] Create a " << RED << "'Standard'" << RESET 
+                << " server\n";
+        ServerPrototype* standardServer = registry.createServer("Standard");
+        if(standardServer) standardServer->showConfig();
+
+        std::cout << "[INFO] Create a " << RED << "'HigMem'" << RESET 
+                << " server\n";
+        ServerPrototype* highMem = registry.createServer("HighMem");
+        if(highMem) highMem->showConfig();
+
+        std::cout << "[INFO] Create a " << RED << "'Standard'" << RESET 
+                << " server\n";
+        ServerPrototype* standardServer2 = registry.createServer("Standard");
+        if(standardServer2) standardServer2->showConfig();
+    }
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Implementation of Server Class}
+    \begin{TerminalBox}
+    === STARTING REIGSTRY === \\
+    ~[System] Installing OS for Prototype Standard\_VPSvia \cred{'default  constructor'} \\
+    ~[System] Installing OS for Prototype HighMem\_VPSvia \cred{'default  constructor'} \\
+    === COMPLETED INITIALIZATION === \\[0.5em]
+    
+    ~[INFO] Create a \cred{'Standard'} server \\
+    ~[System] Installing OS for Prototype Standard\_VPSvia \cred{'copy  constructor'} \\
+    Server: Standard\_VPS | OS: Linux 6.17.4-arch2-1 | RAM: 4GB \\[0.5em]
+    
+    ~[INFO] Create a \cred{'HigMem'} server \\
+    ~[System] Installing OS for Prototype HighMem\_VPSvia \cred{'copy  constructor'} \\
+    Server: HighMem\_VPS | OS: Linux 6.17.4-arch2-1 | RAM: 64GB \\[0.5em]
+    
+    ~[INFO] Create a \cred{'Standard'} server \\
+    ~[System] Installing OS for Prototype Standard\_VPSvia \cred{'copy  constructor'} \\
+    Server: Standard\_VPS | OS: Linux 6.17.4-arch2-1 | RAM: 4GB
+    \end{TerminalBox}
 \end{frame}
 
 \begin{frame}{Registry Prototype}

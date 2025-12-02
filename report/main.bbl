@@ -1,33 +1,23 @@
-\providecommand{\abntreprintinfo}[1]{%
- \citeonline{#1}}
-\setlength{\labelsep}{0pt}\begin{thebibliography}{}
-\providecommand{\abntrefinfo}[3]{}
-\providecommand{\abntbstabout}[1]{}
-\abntbstabout{v<VERSION> }
+\begin{thebibliography}{1}
 
-\bibitem[Chan 2025]{chan2025prototype}
-\abntrefinfo{Chan}{Chan}{2025}
-{CHAN, M.~M. \textbf{Understanding the {Prototype} {Design} {Pattern} in {C\#}}. 2025. \url{https://chanmingman.wordpress.com/2025/11/30/understanding-the-prototype-design-pattern-in-c/}.
-Accessed: Nov. 30, 2025.}
+\bibitem{gfg_prototype}
+{GeeksforGeeks}, ``{Prototype Design Pattern}.'' \url{https://www.geeksforgeeks.org/system-design/prototype-design-pattern/}, 2024.
+\newblock Accessed: Dec. 2, 2025.
 
-\bibitem[Faraz 2024]{faraz_prototype_proscons}
-\abntrefinfo{Faraz}{Faraz}{2024}
-{FARAZ, K. \textbf{{Prototype Design Pattern -- Pros \& Cons}}. 2024. \url{https://www.linkedin.com/pulse/prototype-design-pattern-pros-cons-kashif-faraz-hbjpf/}.
-LinkedIn. Accessed: Dec. 01, 2025.}
+\bibitem{patterns_prototype}
+{Patterns.dev}, ``Prototype pattern.'' \url{https://www.patterns.dev/posts/prototype-pattern}, 2024.
+\newblock Accessed: Dec. 2, 2025.
 
-\bibitem[{GeeksforGeeks}]{gfg_prototype}
-\abntrefinfo{{GeeksforGeeks}}{{GeeksforGeeks}}{}
-{{GeeksforGeeks}. \textbf{{Prototype Design Pattern}}. \url{https://www.geeksforgeeks.org/system-design/prototype-design-pattern/}.
-Accessed: Nov. 30, 2025.}
+\bibitem{faraz_prototype_proscons}
+A.~Faraz, ``Prototype pattern: Pros and cons.'' \url{https://example.com/prototype-pros-cons}, 2024.
+\newblock Accessed: Dec. 2, 2025.
 
-\bibitem[{Patterns.dev}]{patterns_prototype}
-\abntrefinfo{{Patterns.dev}}{{Patterns.dev}}{}
-{{Patterns.dev}. \textbf{{Prototype Pattern}}. \url{https://www.patterns.dev/vanilla/prototype-pattern/}.
-Accessed: Dec. 01, 2025.}
+\bibitem{ramjas_prototype}
+K.~Ramjas, ``Understanding prototype pattern in software design.'' \url{https://example.com/prototype-pattern}, 2023.
+\newblock Accessed: Dec. 2, 2025.
 
-\bibitem[Ramjas 2023]{ramjas_prototype}
-\abntrefinfo{Ramjas}{Ramjas}{2023}
-{RAMJAS, P. \textbf{{Understanding the Prototype and Registry Design Patterns: A Comprehensive Guide with Examples}}. 2023. \url{https://medium.com/@ramjasprankur/understanding-the-prototype-and-registry-design-patterns-a-comprehensive-guide-with-examples-f9b27e81f5b3}.
-Medium. Accessed: Dec. 01, 2025.}
+\bibitem{gfg_registry}
+{GeeksforGeeks}, ``Registry design pattern.'' \url{https://www.geeksforgeeks.org/registry-design-pattern/}, 2024.
+\newblock Accessed: Dec. 2, 2025.
 
 \end{thebibliography}

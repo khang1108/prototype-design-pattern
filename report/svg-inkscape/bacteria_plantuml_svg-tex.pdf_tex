@@ -1,0 +1,90 @@
+%% Creator: Inkscape 1.4.2 (ebf0e940d0, 2025-05-08), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'bacteria_plantuml_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{474.2651825bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.57098198)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.09606967,0.08962359){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{«interface»}\end{tabular}}}}%
+    \put(0.09844176,0.06459772){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{Prototype}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.00988371,0.01194235){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+clone() : Prototype*\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.25618579,0.53761979){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Bacteria\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.02965113,0.49310609){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-dna_ : string\end{tabular}}}}%
+    \put(0.02965113,0.46733427){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-resistanceList_ : vector<string>\end{tabular}}}}%
+    \put(0.02965113,0.44156246){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-mutationHistory_ : vector<string>\end{tabular}}}}%
+    \put(0.02965113,0.41579081){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-generation_ : int\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.02965113,0.37736783){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+Bacteria()\end{tabular}}}}%
+    \put(0.02965113,0.35159601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+Bacteria(const Bacteria\& other)\end{tabular}}}}%
+    \put(0.02965113,0.32582421){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+~Bacteria()\end{tabular}}}}%
+    \put(0.02965113,0.30005255){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+clone() : Bacteria*\end{tabular}}}}%
+    \put(0.02965113,0.27428073){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+mutate(resistanceSubstance : string) : void\end{tabular}}}}%
+    \put(0.02965113,0.2485089){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+printInfo() : void\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.59420871,0.46848094){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Creational Pattern: Prototype}\end{tabular}}}}%
+    \put(0.59420871,0.44455003){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l} \end{tabular}}}}%
+    \put(0.59420871,0.42061912){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Key Features:\end{tabular}}}}%
+    \put(0.59420871,0.39668819){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}• Deep copy via copy constructor\end{tabular}}}}%
+    \put(0.59420871,0.37275728){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}• Clone method creates new instance\end{tabular}}}}%
+    \put(0.59420871,0.3488262){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}• Generation tracking\end{tabular}}}}%
+    \put(0.59420871,0.32489529){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}• Mutation capability\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.3158834,0.07392321){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Clone creates a new\end{tabular}}}}%
+    \put(0.3158834,0.04999227){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Bacteria object with\end{tabular}}}}%
+    \put(0.3158834,0.02606139){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}generation + 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{bacteria_plantuml_svg-tex.pdf}}%
+    \put(0.18146493,0.16880683){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}implements\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
